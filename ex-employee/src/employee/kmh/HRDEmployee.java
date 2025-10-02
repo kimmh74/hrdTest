@@ -8,6 +8,14 @@ public class HRDEmployee {
 		
 		ExClass exClass = new ExClass();
 		
+		//사원 테이블 데이터 전체 삭제
+		exClass.deleteAll();
+		exClass.setAuto_Increment();
+		exClass.selectAll();
+
+// (1)사원 등록 : Employee 테이블에 다음 데이터를 삽입하시오.
+		exClass.insertEmployee("홍길동","영업부","2020-03-01",2500000);
+		
 		
 	}
 
