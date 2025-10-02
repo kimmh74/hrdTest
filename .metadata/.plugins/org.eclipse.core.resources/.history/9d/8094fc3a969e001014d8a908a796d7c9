@@ -1,0 +1,120 @@
+--
+SHOW DATABASES;
+USE hrdtest;
+
+SHOW TABLES;
+
+DROP TABLE `usage`;
+
+
+CREATE TABLE GolfMember(
+MNo INT PRIMARY KEY AUTO_INCREMENT,
+MName VARCHAR(30) NOT NULL,
+Phone VARCHAR (13) UNIQUE,
+JoinDate DATE NOT NULL,
+Grade CHAR(1),
+CHECK (Grade IN ('A','B','C'))
+);
+
+INSERT INTO golfmember(MName,Phone,JoinDate,Grade) VALUES 
+('홍길동','010-111-2222','2020-01-01','A'),
+('이순신','010-3333-4444','2021-05-10','B'),
+('강감찬','010-555-6666','2022-03-15','C');
+
+
+UPDATE golfmember
+SET Phone ='010-1111-2222'
+WHERE MNo=1;
+
+INSERT INTO 
+
+SELECT * FROM golfmember;
+
+CREATE TABLE Lesson(
+LNo INT PRIMARY KEY AUTO_INCREMENT,
+MNo INT,
+Coach VARCHAR(30) NOT NULL,
+StartDate DATE NOT NULL,
+Fee INT,
+CHECK (Fee>=0)
+);
+
+INSERT INTO lesson(MNo,Coach,StartDate,Fee) VALUES 
+(1,'김프로','2020-02-01',300000),
+(2,'박프로','2021-06-01',250000),
+(3,'이프로','2022-04-01',200000);
+
+
+SELECT * FROM lesson;
+
+CREATE TABLE `USAGE`(
+UNo INT PRIMARY KEY AUTO_INCREMENT,
+MNo INT,
+UDate DATE NOT NULL,
+Time INT,
+Cost INT,
+CHECK (Time > 0),
+CHECK (Cost >= 0)
+);
+
+INSERT INTO `USAGE`(MNo,UDate,TIME,Cost) VALUES
+(1,'2020-02-10',120,24000),
+(2,'2021-06-15',90,24000),
+(3,'2022-04-20',150,24000);
+
+UPDATE `usage`
+SET cost = 30000
+WHERE UNo=3
+
+SHOW TABLES;
+
+SELECT*FROM golfmember;
+SELECT*FROM Lesson;
+SELECT*FROM `usage`;
+
+DESC lesson;
+DESC `usage`;
+
+ALTER TABLE lesson
+ADD FOREIGN KEY (MNo)REFERENCES golfmember(MNo);
+
+ALTER TABLE `usage`
+ADD FOREIGN KEY(MNo) REFERENCES golfmember(MNo);
+
+-- 1. 테이블 생성 완료
+-- 2-1,2,3, 등록완료
+-- 2-4 조회 
+---- A등급 회원의 이름, 전화번호,가입일자를 조회한다.
+SELECT MName AS 이름,Phone AS 전화번호,JoinDate AS 가입일자
+FROM golfmember
+
+-- 강습비가 250000이상인 강습 내역을 조회
+SELECT LNO AS 강습번호,MNo AS 회원번호,Coach AS 강사명,Fee AS 강습비
+FROM lesson
+WHERE fee >= 250000;
+
+-- 회원별 총 이용요금을 집계 (출력 : 회원명, 총요금)
+SELECT g.MName AS 회원명, u.Cost AS 총요금
+FROM `usage` AS u
+INNER JOIN golfmember g
+ON u.MNo = g.MNo;
+
+-- 2-5 수정 : 이순신 회원의 등급을 A로 수정
+
+UPDATE golfmember
+SET Grade = 'A'
+WHERE MName ='이순신';
+
+SELECT * FROM golfmember;
+SELECT  MName AS 회원명,Grade AS 등급
+FROM golfmember WHERE MName = '이순신';
+
+-- MNo=3 삭제.. 순서대로 지워야함.
+DELETE FROM `usage` WHERE MNo = 3;
+DELETE FROM lesson WHERE MNo = 3;
+DELETE FROM golfmember WHERE MNo = 3;
+
+
+
+
+

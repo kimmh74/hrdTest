@@ -1,0 +1,5 @@
+show databases;
+use hrdtest;
+
+show tables;
+

@@ -1,0 +1,20 @@
+package employee.kmh;
+
+public class HRDEmployee {
+
+	public static void main(String[] args) {
+		
+		
+// 1) Employee 테이블에 다음 데이터를 삽입하시오.
+// 2-1) 부서가 '개발부'인 사원의 사번, 이름 , 급여를 조히하시오.
+// 2-2) 급여가 3,000,000원 이상인 사원의 이름과 부서를 조회하시오.
+// 3) 이순신의 급여를 3,500,000원으로 수정하시오.
+// ㅇ
+		
+		
+		
+		
+		
+	}
+
+}

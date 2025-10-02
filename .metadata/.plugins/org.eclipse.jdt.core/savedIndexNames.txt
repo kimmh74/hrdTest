@@ -1,0 +1,10 @@
+INDEX VERSION 1.134+D:\s08_mariaDB\hrdtest\.metadata\.plugins\org.eclipse.jdt.core
+2123848480.index
+3575299278.index
+3451576776.index
+2326020758.index
+923938566.index
+1865797976.index
+3413270776.index
+3907427802.index
+1226948408.index

@@ -1,0 +1,10 @@
+package book.kmh.ex;
+
+public class Ex2 {
+
+	public void result() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

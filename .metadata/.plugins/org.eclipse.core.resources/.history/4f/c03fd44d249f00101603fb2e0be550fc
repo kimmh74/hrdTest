@@ -1,0 +1,9 @@
+
+show databases;
+use hrdtest;
+
+show tables;
+
+SELECT CustNo,CustName,Phone,Address,JoinDate AS 가입일자,Grade,City
+FROM shopmember
+WHERE JoinDate >'2020-12-31';

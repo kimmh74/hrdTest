@@ -1,0 +1,40 @@
+show databases;
+use hrdtest;
+show tables ;
+
+
+
+SELECT BookID,Title,PubYear
+FROM book
+WHERE PubYear >= '2020-01-01'
+ORDER BY PubYear ;
+
+SELECT b.Title AS 도서명,m.`Name` AS 회원이름,r.RentDate AS 대출일자,r.ReturnDate AS 반납일자
+FROM rental AS r
+INNER JOIN Member AS m
+ON r.MemberID = m.MemberID
+INNER JOIN book AS b
+ON r.BookID=b.BookID
+WHERE NAME = '홍길동';
+
+SELECT  r.RentDate AS 대출일자, r.ReturnDate AS 반납일자, b.Title AS 책제목 , b.Price AS 책가격
+FROM rental AS r
+INNER JOIN book AS b
+ON r.BookID=b.BookID
+WHERE r.ReturnDate IS NULL;
+
+SELECT b.BookID as 책ID, b.Title AS 책제목, COUNT(RentDate) AS 대출횟수
+FROM rental AS r
+INNER JOIN book AS b 
+ON r.BookID = b.BookID
+GROUP BY b.BookID, b.Title
+ORDER BY 책ID ;
+
+SELECT  b.Title AS 도서명,m.Name AS 회원이름, b.Price AS 책가격
+FROM rental r
+INNER JOIN book b
+ON r.BookID = b.BookID
+INNER JOIN member m
+ON r.MemberID= m.MemberID
+ORDER BY Price DESC
+LIMIT 1;

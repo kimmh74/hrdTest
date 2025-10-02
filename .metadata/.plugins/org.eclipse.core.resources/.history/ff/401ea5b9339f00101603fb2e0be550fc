@@ -1,0 +1,5 @@
+package employee.kmh.conn;
+
+public class DBConnection {
+
+}

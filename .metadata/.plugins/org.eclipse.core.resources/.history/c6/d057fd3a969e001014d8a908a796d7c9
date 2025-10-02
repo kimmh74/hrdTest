@@ -1,0 +1,224 @@
+-- 
+
+CREATE TABLE ShopMember(
+CustNo INT PRIMARY KEY AUTO_INCREMENT,
+custName VARCHAR (30) NOT NULL,
+Phone VARCHAR (13) UNIQUE,
+Address VARCHAR(50),
+JoinDate DATE NOT NULL,
+Grade CHAR(1),
+City CHAR(2),
+CHECK (Grade IN ('A','B','C'))
+); 
+
+INSERT INTO shopmember(CustNo,custName,Phone,Address,JoinDate,Grade,City) VALUES 
+('홍길동','010-1234-5678','서울시 강남구','2020-01-01','A','01'),
+('이순신','010-2222-3333','부산시 해운대구','2021-03-15','B','02'),
+('강감찬','010-7777-8888','대구시 달서구','2019-05-20','C','03');
+
+SELECT * FROM shopmember;
+
+ALTER TABLE shopmember 
+DROP COLUMN phone;
+
+ALTER TABLE shopmember
+ADD COLUMN Phone VARCHAR (13);
+
+DELETE TABLE shopmember WHERE phone;
+
+-- shopmember 복사 방법...
+CREATE TABLE tmp_shopmember AS
+SELECT custNO,custName,NULL AS Phone,Address,JoinDate,Grade,City
+FROM shopmember;
+
+UPDATE tmp_shopmember t
+INNER JOIN shopmember s ON t.custNO=s.CustNo
+SET t.Phone=s.Phone;
+
+DROP TABLE shopmember;
+
+ALTER TABLE tmp_shopmember
+RENAME TO ShopMember;
+
+-- 중요 목록의 성격을 변경.. alter table... modify column 열 성격...
+ALTER TABLE shopmember
+modify COLUMN CustNo INT PRIMARY KEY AUTO_INCREMENT;
+
+ALTER TABLE shopmember
+modify COLUMN Phone VARCHAR(13) UNIQUE;
+
+ALTER TABLE shopmember
+modify COLUMN Grade CHAR(1),
+CHECK(Grade IN ('A','B','C'));
+
+SELECT * FROM ShopMember WHERE Grade NOT IN ('A', 'B', 'C');
+
+ALTER TABLE ShopMember
+ADD CONSTRAINT Grade
+CHECK (Grade IN ('A', 'B', 'C'));
+
+SHOW TABLES;
+
+SELECT *FROM shopmember;
+
+DESC tmp_shopmember;
+DESC shopmember;
+
+CREATE TABLE Sale(
+SaleNo INT PRIMARY KEY AUTO_INCREMENT,
+CustNo INT,
+PCost INT,
+Amount INT,
+Price INT,
+PCode CHAR(3)
+);
+
+select * FROM sale;
+
+INSERT INTO sale(SaleNo,CustNo,PCost,Amount,Price,PCode) VALUES
+(1,1,1000,10,10000,'P01'),
+(2,2,2000,5,10000,'P02'),
+(3,3,1500,7,10500,'P03');
+
+-- FOREIGN KEY 추가하는 방법
+
+ALTER TABLE orders_f
+ADD FOREIGN KEY(PersonID) REFERENCES Persons_f(PersonID);
+
+-- FOREIGN KEY 추가하는 방법
+
+ALTER TABLE Sale
+ADD FOREIGN KEY(CustNo) REFERENCES Shopmember(CustNo);
+
+-- 1. 테이블 생성 완료 . Shopmember . Sale
+-- 2. SQL문 작성하시오.
+-- 2-1 회원등록 삽입
+-- 2-2 고객등급 A인 회원의 이름 전화번호, 가입일자 조회
+SELECT CustName AS 이름 , Phone AS 전화번호, JoinDate AS 가입일자
+FROM shopmember
+WHERE Grade ='A';
+
+-- 2-3 Sale 테이블 삽입
+-- 2-4 판매조회
+
+SELECT * FROM sale;
+-- 회원별 총 구매금액을 구하시오(회원번호,회원성명,총금액)
+SELECT sa.CustNo AS 회원번호,sh.custName AS 회원성명,sa.Price AS 총금액
+FROM sale sa
+INNER JOIN shopmember sh
+ON sa.CustNo=sh.CustNo;
+
+-- 가장 구매금액이 높은 회원의 이름과 금액을 구하시오.
+SELECT sh.custName AS 회원성명,sa.Price AS 총금액
+FROM sale sa
+INNER JOIN shopmember sh
+ON sa.CustNo=sh.CustNo
+ORDER BY sa.Price desc
+LIMIT 1;
+
+-- 2-5 데이터 수정 / 삭제
+-- 이순신 회원의 등급을 A로 수정하시오.
+UPDATE shopmember
+SET Grade ='A'
+WHERE CustName ='이순신';
+
+SELECT *FROM shopmember;
+
+-- CustNo = 3인 회원을 삭제하시오.
+ALTER TABLE sale
+DROP FOREIGN KEY CustNo;
+
+ALTER TABLE shopmember
+DROP CONSTRAINT CustNo;
+
+
+DROP TABLE shopmember;
+DROP TABLE sale;
+
+SHOW TABLES;
+
+-- 새로만들기.
+
+CREATE TABLE shopmember(
+CustNo INT PRIMARY KEY AUTO_INCREMENT,
+custName VARCHAR (30) NOT NULL,
+Phone VARCHAR (13) UNIQUE,
+Address VARCHAR(50),
+JoinDate DATE NOT NULL,
+Grade CHAR(1),
+City CHAR(2),
+CHECK (Grade IN ('A','B','C'))
+); 
+-- CustNo은 Auto_increment이므로 생략한다.
+INSERT INTO shopmember(custName,Phone,Address,JoinDate,Grade,City) VALUES 
+('홍길동','010-1234-5678','서울시 강남구','2020-01-01','A','01'),
+('이순신','010-2222-3333','부산시 해운대구','2021-03-15','B','02'),
+('강감찬','010-7777-8888','대구시 달서구','2019-05-20','C','03');
+
+
+CREATE TABLE Sale(
+SaleNo INT PRIMARY KEY AUTO_INCREMENT,
+CustNo INT,
+PCost INT,
+Amount INT,
+Price INT,
+PCode CHAR(3)
+);
+
+INSERT INTO sale(SaleNo,CustNo,PCost,Amount,Price,PCode) VALUES
+(1,1,1000,10,10000,'P01'),
+(2,2,2000,5,10000,'P02'),
+(3,3,1500,7,10500,'P03');
+
+ALTER TABLE Sale
+ADD FOREIGN KEY(CustNo) REFERENCES Shopmember(CustNo);
+
+DESC shopmember;
+DESC sale;
+
+-- 회원조회 : A등급인 회원의 이름, 전화번호, 가입일자 조회
+SELECT CustName AS 이름,Phone AS 전화번호, JoinDate AS 가입일자
+FROM shopmember
+WHERE Grade ='A';
+
+-- 가입일자가 2020년 이후인 인원 조회
+SELECT CustNo,CustName,Phone,Address,JoinDate AS 가입일자,Grade,City
+FROM shopmember
+WHERE JoinDate >='2020-01-01';
+
+-- 판매조회
+-- 회원별 구매금액을 구하시오.(회원번호,회원성명,총금액)
+SELECT *
+FROM sale sa
+INNER JOIN shopmember sm
+ON sa.CustNo=sm.CustNo;
+
+SELECT sm.CustNo AS 회원번호,sm.custName AS 회원성명,sa.Price AS 구입금액
+FROM sale sa
+INNER JOIN shopmember sm
+ON sa.CustNo=sm.CustNo;
+
+-- 가장 구매금액이 높은 회원의 이름과 금액을 조회
+SELECT CustName AS 이름,Price AS 금액
+FROM sale AS sa
+INNER JOIN shopmember AS sm
+ON sa.CustNo = sm.CustNo
+ORDER BY Price DESC
+LIMIT 1;
+
+-- 데이터 수정 / 삭제
+-- '이순신'회원의 등급을 A로 수정
+
+UPDATE shopmember
+SET Grade ='A'
+WHERE CustName = '이순신'; 
+
+SELECT * FROM shopmember WHERE custname ='이순신';
+
+-- CustNo =3 회원 삭제... FOREIGN KEY 부모먼저(SALE) 삭제후 자식(SHOPMEMBER) 삭제..
+DELETE from sale WHERE custno='3';
+DELETE from shopmember WHERE custno='3';
+
+SELECT *FROM shopmember;
+
+ 

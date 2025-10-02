@@ -1,0 +1,189 @@
+package book.kmh.crud;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import book.kmh.conn.DBConnection;
+
+public class CRUDClass {
+	public CRUDClass() {
+
+		// 1.Create 클래스 만드는 class
+//		createTable();
+
+		// 2.Read테이블 - selectTable
+
+		
+//		insertUsers("1", "홍길동");
+//		insertUsers("2", "일지매");
+//		insertUsers("3", "세종대왕");
+//		insertUsers("4", "장영실");
+//		insertUsers("5", "이순신");
+//		insertUsers("6", "김유신");
+//		insertUsers("7", "광계토대왕");
+		
+//		deleteUsers("4");
+		
+//		updateUsers("2","삼지매");
+		
+		
+		selectTable();
+
+	}
+
+	private void updateUsers(String id, String name) {
+		System.out.println("------------레코드 내용 수정 START -------------");
+		String sql ="update users set name = ? where id =?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = DBConnection.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,name);
+			pstmt.setString(2,id);
+			int rows = pstmt.executeUpdate();
+			System.out.println("--------"+ rows + "행이 수정됨");
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			DBConnection.close(pstmt, conn);
+		}
+				System.out.println("---------------레코드 내용 수정 end");
+		
+		
+	}
+
+	private void deleteUsers(String id) {
+		System.out.println("------------레코드 내용 삭제 start------");
+		String sql ="delete from users where id = ?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+
+		try {
+			conn = DBConnection.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,id);
+			int rows = pstmt.executeUpdate();
+			System.out.println("======" + rows + "행이 삭제됨" );
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}finally {
+			DBConnection.close(pstmt, conn);
+		}
+		System.out.println("====레코드 삭제 end====");
+	}
+
+	private void insertUsers(String id, String name) {
+
+		String sql = "insert into users(id,name) \r\n"
+				+ "values (?,?)";
+		// 값에 해당되는 곳에 ? 프리페어드스테이트
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+
+		try {
+			conn = DBConnection.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, name);
+			int rows = pstmt.executeUpdate();
+			System.out.println("-----------"+rows+"행이 추가되었습니다.----------");
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			DBConnection.close(pstmt, conn);
+		}
+		
+		
+
+	}
+
+	private void selectTable() {
+		System.out.println("===== employess DB 테이블 확인=======");
+		// DB연결
+		String sql = "SELECT*FROM users";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		try {
+			conn = DBConnection.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+
+			if (!rs.next()) {
+				System.out.println("users 테이블에 조회된 결과가 없음");
+			} else {
+				int rowCount = 0;
+				do {
+					rowCount++;
+					String id = rs.getString("id");
+					String name = rs.getString("name");
+					System.out.println("ID:" +  id + " NAME:" + name);
+				} while (rs.next());
+				System.out.println("----------" + rowCount + "-------------");
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			DBConnection.close(rs, pstmt, conn);
+		}
+
+//		try {
+//			conn = DBConnection.getConnection();
+//			pstmt = conn.prepareStatement(sql);
+//			rs = pstmt.executeQuery();
+//
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//			DBConnection.close(rs, pstmt, conn);
+//			// stmt 작은문 먼저, conn큰문.... 닫음====== 열대는 반대 conn,stmt 열림)
+//		}
+
+	}
+
+	private void createTable() {
+		System.out.println("========= 새로운 테이블 생성 START ==================");
+		// DB연결
+		String sql = "create table if not exists users(\r\n" + "id varchar(50),\r\n" + "name varchar(100)\r\n" + ")";
+		Connection conn = null;
+		Statement stmt = null;
+
+		try {
+			conn = DBConnection.getConnection();
+			stmt = conn.createStatement();
+			stmt.execute(sql);
+			System.out.println("users 테이블이 존재합니다.");
+
+//			boolean result = stmt.execute(sql);
+			// 테이블생성 성공하면 result = false 들어온다.
+//			String str = (result) ? "already 테이블users":"new 테이블users" ;
+//			System.out.println(str);
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBConnection.close(stmt, conn);
+			// stmt 작은문 먼저, conn큰문.... 닫음====== 열대는 반대 conn,stmt 열림)
+		}
+
+		System.out.println("========= 새로운 테이블 생성 END ==================");
+
+	}
+
+}
+
+
+

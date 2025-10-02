@@ -1,0 +1,93 @@
+-- 
+USE hrdtest;
+
+SHOW TABLES;
+
+CREATE TABLE Artist(
+ArtistNo INT PRIMARY KEY AUTO_INCREMENT,
+ArtistName VARCHAR(30) NOT NULL UNIQUE,
+DebutDate DATE NOT NULL,
+Genre VARCHAR(20) NOT NULL,
+Agency VARCHAR(30)
+);
+
+INSERT INTO artist(ArtistName,DebutDate,Genre,Agency) VALUES 
+('아이유','2008-09-18','발라드','EDAM엔터테이먼트'),
+('BTS','2013-06-13','K-POP','하이브'),
+('블랙핑크','2016-08-08','K-POP','YG엔터테이먼트');
+
+SELECT * FROM Artist;
+DESC Artist;
+
+CREATE TABLE Album(
+AlbumNo INT PRIMARY KEY AUTO_INCREMENT,
+ArtistNo INT,
+AlbumTitle VARCHAR(50) NOT NULL,
+ReleaseDate DATE NOT NULL,
+Sales INT 
+CHECK (Sales >= 0)
+);
+
+INSERT INTO album(ArtistNo,AlbumTitle,ReleaseDate,Sales) VALUES
+(1,'좋은날','2010-12-09',500000),
+(2,'MAP OF THE SOUL:7','2020-02-21',4300000),
+(3,'THE ALBUM','2020-10-02',1300000);
+
+SHOW TABLES;
+SELECT * FROM album;
+DESC album ;
+
+ALTER TABLE album
+ADD FOREIGN KEY(ArtistNo) REFERENCES artist (artistNo);
+
+-- 1. 테이블 구성 완료
+-- 2-1 ,2아티스트 등록
+-- 2-3 조회 : 장르가 K-POP 인 아티스트 이름과 소속을 조회
+
+SELECT *
+FROM artist
+WHERE Genre = 'K-POP';
+
+SELECT ArtistName AS 이름,Agency AS 소속사,Genre AS 장르
+FROM artist
+WHERE Genre = 'k-pop';
+
+-- 판매량이 1,000,000이상인 앨범의 제목과 판매량을 조회
+
+SELECT *
+FROM album AS al
+INNER JOIN artist ar
+ON al.ArtistNo=ar.ArtistNo
+WHERE Sales >= 1000000;
+
+SELECT al.AlbumTitle AS 제목,al.Sales AS 판매량,ar.ArtistName AS 가수
+FROM album al
+INNER JOIN artist ar
+ON al.ArtistNo=ar.ArtistNo
+WHERE al.Sales>=1000000;
+
+-- 아티스트별 총 판매량
+SELECT ar.ArtistName AS 아티스트명,al.Sales AS 총판매량
+FROM album al
+INNER JOIN artist ar
+ON al.ArtistNo=ar.ArtistNo
+ORDER BY sales;
+
+-- 수정 : 아이유 소속사를 카카오 엔터테이먼트로 수정
+
+UPDATE artist
+SET Agency ='카카오엔터테인먼트'
+WHERE ArtistName = '아이유';
+
+SELECT * FROM artist;
+
+-- albumNo =1 인 앨범을 삭제
+DELETE FROM album WHERE AlbumNo=1;
+SELECT*FROM album;
+
+-- 심화
+SELECT ar.Agency AS 소속사,
+FROM album al
+INNER JOIN artist ar
+
+

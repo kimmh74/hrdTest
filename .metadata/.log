@@ -1,0 +1,622 @@
+!SESSION 2025-09-29 14:28:44.476 -----------------------------------------------
+eclipse.buildId=4.30.0.20231201-1200
+java.version=17.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.emf.ecore 2 0 2025-09-29 14:29:21.529
+!MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
+
+!ENTRY ch.qos.logback.classic 1 0 2025-09-29 14:29:21.703
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-09-29 14:31:44.014
+!MESSAGE Logback config file: D:\s08_mariaDB\day_0929_hrdtest\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.2.1.20231030-1438.xml
+
+!ENTRY org.eclipse.jface 2 0 2025-09-29 14:31:45.845
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2025-09-29 14:31:45.845
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2025-09-29 14:31:48.879
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\YONSAI'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.datatools.connectivity 2 -1 2025-09-29 14:34:58.406
+!MESSAGE Error creating SQL Model Connection connection to New MySQL. (Error: com.mysql.jdbc.Driver)
+!STACK 0
+java.lang.ClassNotFoundException: com.mysql.jdbc.Driver
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:592)
+	at java.base/java.net.FactoryURLClassLoader.loadClass(URLClassLoader.java:872)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:327)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.mysql.connection.JDBCMySQLConnectionFactory.createConnection(JDBCMySQLConnectionFactory.java:28)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.initializeJDBCConnection(ConnectionInfoImpl.java:705)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.<init>(ConnectionInfoImpl.java:690)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:38)
+	at org.eclipse.datatools.connectivity.sqm.core.SQMConnectionFactory.createConnection(SQMConnectionFactory.java:45)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:59)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryAdapterProvider.createConnection(ConnectionFactoryAdapterProvider.java:114)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:163)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.datatools.connectivity 2 -1 2025-09-29 14:34:58.407
+!MESSAGE Error creating JDBC Connection connection to New MySQL. (Error: com.mysql.jdbc.Driver)
+!STACK 0
+java.lang.ClassNotFoundException: com.mysql.jdbc.Driver
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:592)
+	at java.base/java.net.FactoryURLClassLoader.loadClass(URLClassLoader.java:872)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:327)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.mysql.connection.JDBCMySQLConnectionFactory.createConnection(JDBCMySQLConnectionFactory.java:28)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:166)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.datatools.connectivity 4 -1 2025-09-29 14:34:58.408
+!MESSAGE Could not connect to New MySQL.
+!SUBENTRY 1 org.eclipse.datatools.connectivity 2 -1 2025-09-29 14:34:58.408
+!MESSAGE Error creating SQL Model Connection connection to New MySQL. (Error: com.mysql.jdbc.Driver)
+!STACK 0
+java.lang.ClassNotFoundException: com.mysql.jdbc.Driver
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:592)
+	at java.base/java.net.FactoryURLClassLoader.loadClass(URLClassLoader.java:872)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:327)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.mysql.connection.JDBCMySQLConnectionFactory.createConnection(JDBCMySQLConnectionFactory.java:28)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.initializeJDBCConnection(ConnectionInfoImpl.java:705)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.<init>(ConnectionInfoImpl.java:690)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:38)
+	at org.eclipse.datatools.connectivity.sqm.core.SQMConnectionFactory.createConnection(SQMConnectionFactory.java:45)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:59)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryAdapterProvider.createConnection(ConnectionFactoryAdapterProvider.java:114)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:163)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.datatools.connectivity 2 -1 2025-09-29 14:34:58.408
+!MESSAGE Error creating JDBC Connection connection to New MySQL. (Error: com.mysql.jdbc.Driver)
+!STACK 0
+java.lang.ClassNotFoundException: com.mysql.jdbc.Driver
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:592)
+	at java.base/java.net.FactoryURLClassLoader.loadClass(URLClassLoader.java:872)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:327)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.mysql.connection.JDBCMySQLConnectionFactory.createConnection(JDBCMySQLConnectionFactory.java:28)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:166)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.datatools.connectivity 2 -1 2025-09-29 14:35:06.864
+!MESSAGE Error creating JDBC Connection connection to New MySQL. (Error: com.mysql.jdbc.Driver)
+!STACK 0
+java.lang.ClassNotFoundException: com.mysql.jdbc.Driver
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:592)
+	at java.base/java.net.FactoryURLClassLoader.loadClass(URLClassLoader.java:872)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:327)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.mysql.connection.JDBCMySQLConnectionFactory.createConnection(JDBCMySQLConnectionFactory.java:28)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:166)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.datatools.connectivity 4 -1 2025-09-29 14:35:06.864
+!MESSAGE Could not connect to New MySQL.
+!SUBENTRY 1 org.eclipse.datatools.connectivity 2 -1 2025-09-29 14:35:06.864
+!MESSAGE Error creating SQL Model Connection connection to New MySQL. (Error: com.mysql.jdbc.Driver)
+!STACK 0
+java.lang.ClassNotFoundException: com.mysql.jdbc.Driver
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:592)
+	at java.base/java.net.FactoryURLClassLoader.loadClass(URLClassLoader.java:872)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:327)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.mysql.connection.JDBCMySQLConnectionFactory.createConnection(JDBCMySQLConnectionFactory.java:28)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.initializeJDBCConnection(ConnectionInfoImpl.java:705)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.<init>(ConnectionInfoImpl.java:690)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:38)
+	at org.eclipse.datatools.connectivity.sqm.core.SQMConnectionFactory.createConnection(SQMConnectionFactory.java:45)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:59)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryAdapterProvider.createConnection(ConnectionFactoryAdapterProvider.java:114)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:163)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.datatools.connectivity 2 -1 2025-09-29 14:35:06.864
+!MESSAGE Error creating JDBC Connection connection to New MySQL. (Error: com.mysql.jdbc.Driver)
+!STACK 0
+java.lang.ClassNotFoundException: com.mysql.jdbc.Driver
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:592)
+	at java.base/java.net.FactoryURLClassLoader.loadClass(URLClassLoader.java:872)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:327)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.mysql.connection.JDBCMySQLConnectionFactory.createConnection(JDBCMySQLConnectionFactory.java:28)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:166)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.datatools.connectivity 2 -1 2025-09-29 14:35:06.864
+!MESSAGE Error creating SQL Model Connection connection to New MySQL. (Error: com.mysql.jdbc.Driver)
+!STACK 0
+java.lang.ClassNotFoundException: com.mysql.jdbc.Driver
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:592)
+	at java.base/java.net.FactoryURLClassLoader.loadClass(URLClassLoader.java:872)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:327)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.mysql.connection.JDBCMySQLConnectionFactory.createConnection(JDBCMySQLConnectionFactory.java:28)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.initializeJDBCConnection(ConnectionInfoImpl.java:705)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.<init>(ConnectionInfoImpl.java:690)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:38)
+	at org.eclipse.datatools.connectivity.sqm.core.SQMConnectionFactory.createConnection(SQMConnectionFactory.java:45)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:59)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryAdapterProvider.createConnection(ConnectionFactoryAdapterProvider.java:114)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:163)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.datatools.connectivity 2 -1 2025-09-29 14:36:01.958
+!MESSAGE Error creating JDBC Connection connection to New MySQL. (Error: com.mysql.jdbc.Driver)
+!STACK 0
+java.lang.ClassNotFoundException: com.mysql.jdbc.Driver
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:592)
+	at java.base/java.net.FactoryURLClassLoader.loadClass(URLClassLoader.java:872)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:327)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.mysql.connection.JDBCMySQLConnectionFactory.createConnection(JDBCMySQLConnectionFactory.java:28)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:166)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.datatools.connectivity 4 -1 2025-09-29 14:36:01.958
+!MESSAGE Could not connect to New MySQL.
+!SUBENTRY 1 org.eclipse.datatools.connectivity 2 -1 2025-09-29 14:36:01.958
+!MESSAGE Error creating SQL Model Connection connection to New MySQL. (Error: com.mysql.jdbc.Driver)
+!STACK 0
+java.lang.ClassNotFoundException: com.mysql.jdbc.Driver
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:592)
+	at java.base/java.net.FactoryURLClassLoader.loadClass(URLClassLoader.java:872)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:327)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.mysql.connection.JDBCMySQLConnectionFactory.createConnection(JDBCMySQLConnectionFactory.java:28)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.initializeJDBCConnection(ConnectionInfoImpl.java:705)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.<init>(ConnectionInfoImpl.java:690)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:38)
+	at org.eclipse.datatools.connectivity.sqm.core.SQMConnectionFactory.createConnection(SQMConnectionFactory.java:45)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:59)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryAdapterProvider.createConnection(ConnectionFactoryAdapterProvider.java:114)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:163)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.datatools.connectivity 2 -1 2025-09-29 14:36:01.959
+!MESSAGE Error creating JDBC Connection connection to New MySQL. (Error: com.mysql.jdbc.Driver)
+!STACK 0
+java.lang.ClassNotFoundException: com.mysql.jdbc.Driver
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:592)
+	at java.base/java.net.FactoryURLClassLoader.loadClass(URLClassLoader.java:872)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:327)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.mysql.connection.JDBCMySQLConnectionFactory.createConnection(JDBCMySQLConnectionFactory.java:28)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:166)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.datatools.connectivity 2 -1 2025-09-29 14:36:01.959
+!MESSAGE Error creating SQL Model Connection connection to New MySQL. (Error: com.mysql.jdbc.Driver)
+!STACK 0
+java.lang.ClassNotFoundException: com.mysql.jdbc.Driver
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:592)
+	at java.base/java.net.FactoryURLClassLoader.loadClass(URLClassLoader.java:872)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.createConnection(JDBCConnection.java:327)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.internalCreateConnection(DriverConnectionBase.java:105)
+	at org.eclipse.datatools.connectivity.DriverConnectionBase.open(DriverConnectionBase.java:54)
+	at org.eclipse.datatools.connectivity.drivers.jdbc.JDBCConnection.open(JDBCConnection.java:96)
+	at org.eclipse.datatools.enablement.internal.mysql.connection.JDBCMySQLConnectionFactory.createConnection(JDBCMySQLConnectionFactory.java:28)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryProvider.createConnection(ConnectionFactoryProvider.java:83)
+	at org.eclipse.datatools.connectivity.internal.ConnectionProfile.createConnection(ConnectionProfile.java:359)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.initializeJDBCConnection(ConnectionInfoImpl.java:705)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionInfoImpl.<init>(ConnectionInfoImpl.java:690)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:38)
+	at org.eclipse.datatools.connectivity.sqm.core.SQMConnectionFactory.createConnection(SQMConnectionFactory.java:45)
+	at org.eclipse.datatools.connectivity.sqm.internal.core.connection.ConnectionFactory.createConnection(ConnectionFactory.java:59)
+	at org.eclipse.datatools.connectivity.internal.ConnectionFactoryAdapterProvider.createConnection(ConnectionFactoryAdapterProvider.java:114)
+	at org.eclipse.datatools.connectivity.internal.ManagedConnection.createConnection(ManagedConnection.java:163)
+	at org.eclipse.datatools.connectivity.internal.CreateConnectionJob.run(CreateConnectionJob.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-09-29 14:44:07.670
+!MESSAGE An internal error occurred during: "select * from hrdtest".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "this.results" is null
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:834)
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:533)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.handleSQLException(ResultSupportRunnable.java:451)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.run(ResultSupportRunnable.java:172)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-09-29 14:44:57.552
+!MESSAGE An internal error occurred during: "select * from hrdtest".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "this.results" is null
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:834)
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:533)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.handleSQLException(ResultSupportRunnable.java:451)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.run(ResultSupportRunnable.java:172)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-09-29 14:45:16.916
+!MESSAGE An internal error occurred during: "CREATE TABLE Books( BookID INT PRIMAR...".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "this.results" is null
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:834)
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:533)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.handleSQLException(ResultSupportRunnable.java:451)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.run(ResultSupportRunnable.java:172)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-09-29 14:46:45.541
+!MESSAGE An internal error occurred during: "select * from hrdtest".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "this.results" is null
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:834)
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:533)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.handleSQLException(ResultSupportRunnable.java:451)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.run(ResultSupportRunnable.java:172)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-09-29 14:58:58.205
+!MESSAGE An internal error occurred during: "ALTER TABLE Member ADD FOREIGN KEY(Me...".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "this.results" is null
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:834)
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:533)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.handleSQLException(ResultSupportRunnable.java:451)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.run(ResultSupportRunnable.java:172)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-09-29 15:03:46.392
+!MESSAGE An internal error occurred during: "ALTER TABLE Rental ADD constraint FK_...".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "this.results" is null
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:834)
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:533)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.handleSQLException(ResultSupportRunnable.java:451)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.run(ResultSupportRunnable.java:172)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-09-29 15:04:35.457
+!MESSAGE An internal error occurred during: "ALTER TABLE Rental ADD constraint FK_...".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "this.results" is null
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:834)
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:533)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.handleSQLException(ResultSupportRunnable.java:451)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.run(ResultSupportRunnable.java:172)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-09-29 15:15:26.657
+!MESSAGE An internal error occurred during: "show datebases".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "this.results" is null
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:834)
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:533)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.handleSQLException(ResultSupportRunnable.java:451)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.run(ResultSupportRunnable.java:172)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-09-29 15:19:44.831
+!MESSAGE An internal error occurred during: "insert into book valus (1,'타이타닉','지은이...".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "this.results" is null
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:834)
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:533)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.handleSQLException(ResultSupportRunnable.java:451)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.run(ResultSupportRunnable.java:172)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-09-29 15:21:56.924
+!MESSAGE An internal error occurred during: "insert into book values (1,'타이타닉','지은...".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "this.results" is null
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:834)
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:533)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.handleSQLException(ResultSupportRunnable.java:451)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.run(ResultSupportRunnable.java:172)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-09-29 15:22:17.174
+!MESSAGE An internal error occurred during: "insert into book values (1,'타이타닉','지은...".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "this.results" is null
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:834)
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:533)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.handleSQLException(ResultSupportRunnable.java:451)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.run(ResultSupportRunnable.java:172)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-09-29 15:28:00.836
+!MESSAGE An internal error occurred during: "delect table book where bookid = 1".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "this.results" is null
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:834)
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:533)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.handleSQLException(ResultSupportRunnable.java:451)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.run(ResultSupportRunnable.java:172)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-09-29 15:28:34.334
+!MESSAGE An internal error occurred during: "delect table book".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "this.results" is null
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:834)
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:533)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.handleSQLException(ResultSupportRunnable.java:451)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.run(ResultSupportRunnable.java:172)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-09-29 15:29:04.137
+!MESSAGE An internal error occurred during: "delete table book where bookid = 1".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "this.results" is null
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:834)
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:533)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.handleSQLException(ResultSupportRunnable.java:451)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.run(ResultSupportRunnable.java:172)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-09-29 15:29:42.458
+!MESSAGE An internal error occurred during: "insert into book values(2, '위대한 개츠비',...".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "this.results" is null
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:834)
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:533)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.handleSQLException(ResultSupportRunnable.java:451)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.run(ResultSupportRunnable.java:172)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-09-29 15:30:46.302
+!MESSAGE An internal error occurred during: "insert into book values(2, '위대한 개츠비',...".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "this.results" is null
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:834)
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:533)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.handleSQLException(ResultSupportRunnable.java:451)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.run(ResultSupportRunnable.java:172)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-10-01 12:03:11.217 -----------------------------------------------
+eclipse.buildId=4.30.0.20231201-1200
+java.version=17.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.emf.ecore 2 0 2025-10-01 12:03:12.357
+!MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
+
+!ENTRY ch.qos.logback.classic 1 0 2025-10-01 12:03:12.529
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.core.resources 2 10035 2025-10-01 12:03:20.488
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-10-01 12:03:20.804
+!MESSAGE Logback config file: D:\s08_mariaDB\hrdtest\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.2.1.20231030-1438.xml
+
+!ENTRY org.eclipse.jface 2 0 2025-10-01 12:03:21.784
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2025-10-01 12:03:21.784
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2025-10-01 12:03:25.272
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\YONSAI'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-10-01 14:33:26.966
+!MESSAGE An internal error occurred during: "SELECT BookID,Titel FROM book WHERE P...".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "this.results" is null
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:834)
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:533)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.handleSQLException(ResultSupportRunnable.java:451)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.run(ResultSupportRunnable.java:172)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-10-01 15:27:36.335
+!MESSAGE An internal error occurred during: "SELECT  r.RentDate AS 대출일자, r.ReturnD...".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "this.results" is null
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:834)
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:533)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.handleSQLException(ResultSupportRunnable.java:451)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.run(ResultSupportRunnable.java:172)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-10-01 15:28:02.528
+!MESSAGE An internal error occurred during: "SELECT  r.RentDate AS 대출일자, r.ReturnD...".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "this.results" is null
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:834)
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:533)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.handleSQLException(ResultSupportRunnable.java:451)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.run(ResultSupportRunnable.java:172)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-10-01 15:28:17.474
+!MESSAGE An internal error occurred during: "SELECT  r.RentDate AS 대출일자, r.ReturnD...".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "this.results" is null
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:834)
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:533)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.handleSQLException(ResultSupportRunnable.java:451)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.run(ResultSupportRunnable.java:172)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-10-01 15:54:11.755
+!MESSAGE An internal error occurred during: "SELECT * b.Title AS 도서명,m.`Name` AS 회...".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "this.results" is null
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:834)
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:533)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.handleSQLException(ResultSupportRunnable.java:451)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.run(ResultSupportRunnable.java:172)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 4 2 2025-10-01 15:54:21.771
+!MESSAGE An internal error occurred during: "SELECT * b.Title AS 도서명,m.Name AS 회원이...".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "this.results" is null
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:834)
+	at org.mariadb.jdbc.Statement.getMoreResults(Statement.java:533)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.handleSQLException(ResultSupportRunnable.java:451)
+	at org.eclipse.datatools.sqltools.editor.core.result.ResultSupportRunnable.run(ResultSupportRunnable.java:172)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-10-02 08:57:57.475 -----------------------------------------------
+eclipse.buildId=4.30.0.20231201-1200
+java.version=17.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.emf.ecore 2 0 2025-10-02 08:58:33.924
+!MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
+
+!ENTRY ch.qos.logback.classic 1 0 2025-10-02 08:58:34.110
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-10-02 08:58:58.611
+!MESSAGE Logback config file: D:\s08_mariaDB\hrdtest\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.2.1.20231030-1438.xml
+
+!ENTRY org.eclipse.jface 2 0 2025-10-02 08:58:59.728
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2025-10-02 08:58:59.728
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2025-10-02 08:59:05.209
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\YONSAI'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.

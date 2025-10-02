@@ -1,0 +1,10 @@
+package book.kmh;
+
+public class HrdBook {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
