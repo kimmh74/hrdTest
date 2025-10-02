@@ -15,6 +15,8 @@ public class HRDEmployee {
 
 // (1)사원 등록 : Employee 테이블에 다음 데이터를 삽입하시오.
 		exClass.insertEmployee("홍길동","영업부","2020-03-01",2500000);
+		exClass.insertEmployee("이순신","인사부","2019-07-15",3200000);
+		exClass.insertEmployee("강감찬","개발부","2021-01-10",2800000);
 		
 		
 	}
